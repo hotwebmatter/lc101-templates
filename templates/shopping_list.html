@@ -3,7 +3,7 @@
   <input type="text" name="food">
   {% if items %}
     {% for item in items %}
-      <input type="hidden" name="food" value="{{item}}">
+      <input type="hidden" name="food" value="{{item | escape}}">
     {% endfor %}
   {% endif %}
   <button>Add</button>
@@ -14,7 +14,7 @@
   <h2>Shopping List</h2>
   <ul>
     {% for item in items %}
-      <li>{{ item }}</li>
+      <li>{{ item | escape }}</li>
     {% endfor %}
   </ul>
   {% endif %}
